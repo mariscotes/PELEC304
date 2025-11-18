@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block tittle %}Student Profile{% endblock %}
+
+{% blockcontent  %}
+
+<h2>Student List:</h2>
+
+<ul>
+    {% for student in students %}
+        <li>{{ student.name|upper }} - {{ student.age }} years old</li>
+    {% empty %}
+        <li>No Student found</li>
+    {% endfor %}
+</ul>
+{% endblock %}
