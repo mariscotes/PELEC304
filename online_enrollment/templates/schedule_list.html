@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+    <h2>Schedule</h2>
+    <ul>
+        {% for schedule in schedules %} 
+        <li>
+            {{ schedule.schedule_id }} | {{schedule.course_id}} | {{schedule.instructor_id}} 
+            | {{schedule.day}} | {{schedule.time}} 
+        </li>
+        <hr>
+        {% empty %}
+        <li>No Schedule list</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

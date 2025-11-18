@@ -22,5 +22,6 @@ urlpatterns = [
     # path('', include('courses.urls')),
     # path('', include('registrations.urls')),
     path('', include('online_enrollment.urls')),
+    path('', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+    <h2>Schedule</h2>
+    <ul>
+        {% for transcript in transcripts %} 
+        <li>
+            {{ transcript.transcript_id }} - {{transcript.student_id}} 
+        </li>
+        {% empty %}
+        <li>No Transcript list</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

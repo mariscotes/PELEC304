@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+    <h2>Schedule</h2>
+    <ul>
+        {% for student in students %} 
+        <li>
+            {{ student.student_id }} | {{student.first_name}} | {{student.last_name}} 
+            | {{student.date_of_birth}} | {{student.email}} 
+        </li>
+        <hr>
+        {% empty %}
+        <li>No Student list</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
