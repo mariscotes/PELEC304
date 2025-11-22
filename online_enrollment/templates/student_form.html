@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <a href="/edit/<int:pk>/">Edit</a>
-        <a href="{% url 'edit' item.pk %}">Edit</a>
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h2>Add Student</h2>
+    <h2>Edit Student - {{ student.first_name }} {{ student.last_name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+        <button type="submit">Add Student</button>
+        <a href="{% url 'student_list' %}">Cancel</a>
+    </form>
+</div>
 
-        <title>Student Form</title>
-    </head>
-    <body>
-        <h1>Student Form</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            {% url 'edit' item.pk %}
-            <button type="submit">Save</button>
-        </form>
-    </body>
-</html>
+{% endblock %}
